@@ -1,24 +1,22 @@
 <script>
 import appConfig from '@src/app.config'
+import GitHub from './components/GitHub'
 
 export default {
-  page: {
-    // All subcomponent titles will be injected into this template.
-    titleTemplate(title) {
-      title = typeof title === 'function' ? title(this.$store) : title
-      return title ? `${title} | ${appConfig.title}` : appConfig.title
-    },
+  components: {
+    GitHub
+  },
+  data(){
+    return{
+    }
   },
 }
 </script>
 
 <template>
   <div id="app">
-    <!--
-    Even when routes use the same component, treat them
-    as distinct and create the component again.
-    -->
-    <RouterView :key="$route.fullPath" />
+    <h1>Holu</h1>
+    <GitHub></GitHub>
   </div>
 </template>
 
