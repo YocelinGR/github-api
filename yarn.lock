@@ -2360,6 +2360,13 @@ apollo-client@^2.4.13:
     tslib "^1.9.3"
     zen-observable "^0.8.0"
 
+apollo-link-context@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.14.tgz#6265eef49bedadddbbcff4026d04cd351094cd6c"
+  integrity sha512-l6SIN7Fwqhgg5C5eA8xSrt8gulHBmYTE3J4z5/Q2hP/8Kok0rQ/z5q3uy42/hkdYlnaktOvpz+ZIwEFzcXwujQ==
+  dependencies:
+    apollo-link "^1.2.8"
+
 apollo-link-dedup@^1.0.0:
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-1.0.15.tgz#028148f1028e806a9ab2f4abf3bde9dc292565e9"
@@ -6940,10 +6947,17 @@ graphql-anywhere@^4.1.0-alpha.0:
     apollo-utilities "^1.1.3"
     tslib "^1.9.3"
 
-graphql-tag@^2.4.2:
+graphql-tag@^2.10.1, graphql-tag@^2.4.2:
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
+
+graphql@^14.1.1:
+  version "14.1.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.1.1.tgz#d5d77df4b19ef41538d7215d1e7a28834619fac0"
+  integrity sha512-C5zDzLqvfPAgTtP8AUPIt9keDabrdRAqSWjj2OPRKrKxI9Fb65I36s1uCs1UUBFnSWTdO7hyHi7z1ZbwKMKF6Q==
+  dependencies:
+    iterall "^1.2.2"
 
 gray-matter@^4.0.1:
   version "4.0.2"
@@ -8243,6 +8257,11 @@ isurl@^1.0.0-alpha5:
   dependencies:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
+
+iterall@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
+  integrity sha512-yynBb1g+RFUPY64fTrFv7nsjRrENBQJaX2UL+2Szc9REFrSNm1rpSXHGzhmAy7a9uv3vlvgBlXnf9RqmPH1/DA==
 
 javascript-stringify@^1.6.0:
   version "1.6.0"
@@ -14014,6 +14033,11 @@ throat@^4.0.0:
   resolved "https://registry.yarnpkg.com/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
   integrity sha1-iQN8vJLFarGJJua6TLsgDhVnKmo=
 
+throttle-debounce@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-2.1.0.tgz#257e648f0a56bd9e54fe0f132c4ab8611df4e1d5"
+  integrity sha512-AOvyNahXQuU7NN+VVvOOX+uW6FPaWdAOdRP5HfwYxAfCzXTFKRMoIMk+n+po318+ktcChx+F1Dd91G3YHeMKyg==
+
 throttleit@~0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/throttleit/-/throttleit-0.0.2.tgz#cfedf88e60c00dd9697b61fdd2a8343a9b680eaf"
@@ -14689,6 +14713,14 @@ vm-browserify@0.0.4:
   integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
   dependencies:
     indexof "0.0.1"
+
+vue-apollo@^3.0.0-beta.28:
+  version "3.0.0-beta.28"
+  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.28.tgz#be6a3a1504be2096cbfb23996537e2fc95c8c239"
+  integrity sha512-ceCc1xTyxpNtiSeJMQgSkfgJue6pnv+TIvp75CwZlwMxRtNZjITj4MGvBWFwnoIEhVrUAw45ff/5udgJ8z9sdQ==
+  dependencies:
+    chalk "^2.4.1"
+    throttle-debounce "^2.0.0"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"

@@ -1,5 +1,4 @@
 <script>
-import appConfig from '@src/app.config'
 import GitHub from './components/GitHub'
 
 export default {

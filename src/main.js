@@ -5,11 +5,12 @@ import store from '@state/store'
 import '@components/_globals'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
+import { setContext } from 'apollo-link-context'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import VueApollo from 'vue-apollo'
 
 // Don't warn about using the dev version of Vue in development.
-Vue.config.productionTip = process.env.NODE_ENV === 'production'
+Vue.config.productionTip = false // process.env.NODE_ENV === 'production'
 
 // If running inside Cypress...
 if (window.Cypress) {
@@ -17,13 +18,29 @@ if (window.Cypress) {
   Vue.config.errorHandler = window.Cypress.cy.onUncaughtException
 }
 
+const auth = '2a8206244a49afec469c9020b0821a8cd1a6794e'
+const USERNAME = 'YocelinGR'
+const TOKEN = '2a8206244a49afec469c9020b0821a8cd1a6794e'
+
 // Create apollo client
 const httpLink = new HttpLink({
-  uri: 'https://developer.github.com/v4/explorer/',
+  uri: `https://api.github.com/graphql?user_name=${USERNAME}&access_token=${TOKEN}`,
+  fetchOptions: {
+    mode: 'no-cors',
+  },
 })
 
+const middlewareLink = setContext(() => ({
+  headers: {
+    authorization: `Bearer ${auth}`,
+    contentType: 'application/json',
+  },
+}))
+
+const link = middlewareLink.concat(httpLink)
+
 const apolloClient = new ApolloClient({
-  link: httpLink,
+  link,
   cache: new InMemoryCache(),
   connectToDevTools: true,
 })
