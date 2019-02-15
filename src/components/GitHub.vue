@@ -9,7 +9,6 @@
 
 <script>
 import gql from 'graphql-tag';
-
 const mutationEmoji = gql`
 mutation AddReactionToIssue($input: AddReactionInput!) {
   addReaction(input: $input) {
@@ -22,7 +21,6 @@ mutation AddReactionToIssue($input: AddReactionInput!) {
   }
 }
 `;
-
 export default {
   data: () => ({
     topicData: {}

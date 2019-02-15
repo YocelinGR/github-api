@@ -18,13 +18,13 @@ if (window.Cypress) {
   Vue.config.errorHandler = window.Cypress.cy.onUncaughtException
 }
 
-const auth = '2a8206244a49afec469c9020b0821a8cd1a6794e'
+const auth = ''
 const USERNAME = 'YocelinGR'
 const TOKEN = '2a8206244a49afec469c9020b0821a8cd1a6794e'
 
 // Create apollo client
 const httpLink = new HttpLink({
-  uri: `https://api.github.com/graphql?user_name=${USERNAME}&access_token=${TOKEN}`,
+  uri: `https://api.github.com/graphql/user?user_name=${USERNAME}&access_token=${TOKEN}`,
   fetchOptions: {
     mode: 'no-cors',
   },
