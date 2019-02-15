@@ -18,7 +18,6 @@ export default {
     <GitHub></GitHub>
   </div>
 </template>
-
 <!-- This should generally be the only global CSS in the app. -->
 <style lang="scss">
 // Allow element/type selectors, because this is global CSS.
