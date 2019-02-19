@@ -2,9 +2,11 @@
   <div class="row">
     <div class="col-md-3 user-space">
       <div class="card user" style="width: 18rem;">
-        <img :src="user.avatarUrl" class="card-img-top" alt="...">
+        <img :src="user && user.avatarUrl" class="card-img-top" alt="...">
         <div class="card-body">
-          <span class="emoji">{{ user.status && user.status.emoji}}</span>
+          <span class="emoji" data-markdown>
+              {{ user.status && user.status.emoji}}
+          </span>
           <p class="card-text user-message">{{ user.status && user.status.message}}</p>
         </div>
       </div>
@@ -18,24 +20,14 @@
       <hr>
     </div>
     <div class="col-md-8 user-work">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Overview</a>
-            <a class="nav-item nav-link" href="#">Repositories</a>
-            <a class="nav-item nav-link" href="#">Projects</a>
-            <a class="nav-item nav-link" href="#">Stars</a>
-            <a class="nav-item nav-link" href="#">Followers {{ user.followers && user.followers.totalCount}}</a>
-            <a class="nav-item nav-link" href="#">Following {{ user.followers && user.following.totalCount}}</a>
-          </div>
-        </div>
-      </nav>
+      <GitHubTab :total-count="totalCount"></GitHubTab>
     </div>
   </div>
 </template>
 
 <script>
   import gql from 'graphql-tag';
+  import GitHubTab from './GitHubTab'
 
     const getUser = gql`
       query user {
@@ -46,28 +38,45 @@
           emoji,
           message
         },
-        company,
-        createdAt,
-        databaseId,
-        id,
-        location,
-        login,
-        followers {
+        followers{
+           totalCount
+         },
+         following{
+           totalCount
+         },
+         projects {
           totalCount
         },
-        following {
-          totalCount
-        },
+         repositories{
+           totalCount
+         },
+         starredRepositories{
+           totalCount
+         }
       }
     }
     `;
     export default {
+      components: {
+        GitHubTab,
+      },
       data: () => ({
         user: {},
       }),
       apollo: {
         user: {
           query: getUser,
+          }
+        },
+        computed: {
+          totalCount(){
+            return{
+              followers: this.user.followers && this.user.followers.totalCount,
+              following: this.user.following && this.user.following.totalCount,
+              projects: this.user.projects && this.user.projects.totalCount,
+              repositories: this.user.repositories && this.user.repositories.totalCount,
+              starredRepositories: this.user.starredRepositories && this.user.starredRepositories.totalCount,
+            }
           }
         }
     }
@@ -113,5 +122,6 @@
   max-width: 100%;
   padding-top: 15px;
   padding-left: 5px;
+  justify-content: center;
 }
 </style>
