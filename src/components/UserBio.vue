@@ -4,8 +4,8 @@
       <div class="card user" style="width: 18rem;">
         <img :src="user.avatarUrl" class="card-img-top" alt="...">
         <div class="card-body">
-          <span class="emoji">{{ user.status.emoji}}</span>
-          <p class="card-text user-message">{{ user.status.message}}</p>
+          <span class="emoji">{{ user.status && user.status.emoji}}</span>
+          <p class="card-text user-message">{{ user.status && user.status.message}}</p>
         </div>
       </div>
       <div class="user-description">
@@ -25,8 +25,8 @@
             <a class="nav-item nav-link" href="#">Repositories</a>
             <a class="nav-item nav-link" href="#">Projects</a>
             <a class="nav-item nav-link" href="#">Stars</a>
-            <a class="nav-item nav-link" href="#">Followers {{ user.followers.totalCount}}</a>
-            <a class="nav-item nav-link" href="#">Following {{ user.following.totalCount}}</a>
+            <a class="nav-item nav-link" href="#">Followers {{ user.followers && user.followers.totalCount}}</a>
+            <a class="nav-item nav-link" href="#">Following {{ user.followers && user.following.totalCount}}</a>
           </div>
         </div>
       </nav>
@@ -75,16 +75,16 @@
 
 <style>
 .user-message{
-  white-space: normal;
-  color: #24292e;
   box-sizing: border-box;
   display: block;
   font-size: 20px;
+  color: #24292e;
+  white-space: normal;
 }
 .user {
-  vertical-align: center;
   justify-content: center;
   text-align: center;
+  vertical-align: center;
 }
 .emoji {
   position:relative;
@@ -95,23 +95,23 @@
   border-radius: 15px;
 }
 .user-description{
+  justify-content: center;
+  padding-top: 15px;
+  padding-left: 5px;
   font-size: 18px;
   color: rgb(92, 90, 90);
   text-align: justify;
   vertical-align: center;
-  justify-content: center;
-  padding-top: 15px;
-  padding-left: 5px;
 }
 .user-space {
-  padding-left: 30px;
-  padding-top: 30px;
   max-width: 100%;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
 .user-work {
-  padding-left: 5px;
-  padding-top: 15px;
   max-width: 100%;
+  padding-top: 15px;
+  padding-left: 5px;
 }
 </style>

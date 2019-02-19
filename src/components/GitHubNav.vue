@@ -61,29 +61,29 @@ export default {
 
 <style scoped>
   header {
-    background-color: #24292e;
-    color: rgb(206, 209, 212);
-    padding-bottom: 12px;
-    padding-top: 12px;
-    font-size: 14px !important;
-    font-family: Helvetica,Arial,sans-serif;
     position: relative;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px !important;
+    color: rgb(206, 209, 212);
+    background-color: #24292e;
   }
   .git-nav, .icon-nav {
-    justify-content: space-between;
-    background-color: #24292e;
+    position: relative;
+    box-sizing: border-box;
     display: flex;
     flex: 1 1 auto;
-    box-sizing: border-box;
+    justify-content: space-between;
     color: white;
-    position: relative;
+    background-color: #24292e;
   }
   a, i {
-    color: white!important;
+    color: white !important;
   }
   img {
-    padding-bottom: 12px;
-    padding-top: 12px;
     float: right;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 </style>
