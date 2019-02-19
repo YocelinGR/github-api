@@ -1,9 +1,11 @@
 <script>
-import GitHub from './components/GitHub'
+import GitHubNav from './components/GitHubNav'
+import UserBio from './components/UserBio'
 
 export default {
   components: {
-    GitHub
+    UserBio,
+    GitHubNav
   },
   data(){
     return{
@@ -14,8 +16,8 @@ export default {
 
 <template>
   <div id="app">
-    <h1>Holu</h1>
-    <GitHub></GitHub>
+    <GitHubNav></GitHubNav>
+    <UserBio></UserBio>
   </div>
 </template>
 <!-- This should generally be the only global CSS in the app. -->
