@@ -35,6 +35,7 @@
         avatarUrl(size: 256),
         id,
         bio,
+        location,
         status{
           emoji,
           message
