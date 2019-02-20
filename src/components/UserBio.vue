@@ -33,6 +33,7 @@
       query user {
       user(login: "YocelinGR"){
         avatarUrl(size: 256),
+        id,
         bio,
         status{
           emoji,
