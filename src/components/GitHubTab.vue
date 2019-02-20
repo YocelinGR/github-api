@@ -17,6 +17,7 @@
       <div v-for="tab in tabs" :key="tab.id" class="tab-pane" :class="{active:tab.id === activeTab.id}" role="tabpanel">
         <p v-if="tab.id === activeTab.id">{{ tab.name }}</p>
       </div>
+      <OverView v-if="activeTab.id === 0"></OverView>
       <StarsComponent v-if="activeTab.id === 3"></StarsComponent>
     </div>
     <!-- <pre>{{ $data }}</pre> -->
@@ -25,8 +26,10 @@
 
 <script>
 import StarsComponent from './StarsComponent'
+import OverView from './OverView'
 export default {
   components: {
+    OverView,
     StarsComponent,
   },
   props: {
