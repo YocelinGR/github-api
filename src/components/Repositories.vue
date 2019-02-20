@@ -57,16 +57,17 @@ export default {
   }),
   methods: {
     starredRepo(id){
-      console.log(id);
+      const varStar = {
+              starrableId: id,
+              clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
+            };
       this.$apollo.mutate({
         mutation: addStar,
         variables: {
-          input: {
-            starrableId: "id",
-            clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
-          },
+            input: varStar,
         }
       })
+      console.log(id);
     }
   },
   apollo: {
