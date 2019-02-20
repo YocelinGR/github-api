@@ -18,6 +18,7 @@
         <p v-if="tab.id === activeTab.id">{{ tab.name }}</p>
       </div>
       <OverView v-if="activeTab.id === 0"></OverView>
+      <Repositories v-if="activeTab.id === 1"></Repositories>
       <StarsComponent v-if="activeTab.id === 3"></StarsComponent>
     </div>
     <!-- <pre>{{ $data }}</pre> -->
@@ -27,9 +28,11 @@
 <script>
 import StarsComponent from './StarsComponent'
 import OverView from './OverView'
+import Repositories from './Repositories'
 export default {
   components: {
     OverView,
+    Repositories,
     StarsComponent,
   },
   props: {
