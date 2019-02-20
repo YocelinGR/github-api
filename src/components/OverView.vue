@@ -1,7 +1,7 @@
 <template>
   <div>
     <section v-for="repo in user.repositories.nodes" :key="repo.id">
-      {{ repo.name}}
+      <a :href="repo.url" class="title">{{repo.name}}</a>
       <p v-if="repo.repositoryTopics.nodes">
         <span v-for="topic in repo.repositoryTopics.nodes" :key="topic.id">
           {{topic.topic.name}}
@@ -22,6 +22,7 @@ const overviewTag = gql`
       nodes{
         id
         name
+        url
         repositoryTopics(first: 3){
           nodes{
             id
@@ -50,7 +51,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   section {
     border: 1px rgb(141, 134, 134) solid;
     width: 45%;
@@ -68,5 +69,11 @@ export default {
   span {
     color: rgb(100, 97, 97);
     font-weight: 600;
+    padding: 8px;
+  }
+  .title {
+    font-size: 16px;
+    color: rgb(10, 112, 196);
+    padding: 4px;
   }
 </style>

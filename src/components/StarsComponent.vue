@@ -1,13 +1,19 @@
 <template>
 <div>
-  <h4>REPOSITORIES</h4>
-  <hr>
-  <div v-for="repo in user.starredRepositories.edges" :key="repo.starredAt">
-    <span>{{ repo.node.owner.login}} / </span>
-    <a :href="repo.node.url">{{ repo.node.name}}</a>
-    <p>{{ repo.starredAt }}</p>
-    <hr>
-  </div>
+    <div v-for="repo in user.starredRepositories.edges" :key="repo.starredAt" class="star row">
+      <div class="col-md-8">
+        <span class="userRepo">{{ repo.node.owner.login}} / </span>
+        <a :href="repo.node.url" class="userRepo">{{ repo.node.name}}</a>
+        <p class="description">{{ repo.node.description}}</p>
+        <span v-for="topic in repo.node.repositoryTopics.nodes" :key="topic.id" class="topic">
+          {{topic.topic.name}}
+        </span>
+        <span class="topic">{{ repo.starredAt }}</span>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-light" @click="removeStar(repo.node.id)"><i class='far fa-star'></i> Unfollow</button>
+      </div>
+    </div>
 </div>
 </template>
 <script>
@@ -17,13 +23,14 @@ const starredByUser = gql`
   query user {
   user(login: "YocelinGR"){
     id
-    starredRepositories(first:2){
+    starredRepositories(first:10){
       totalCount
       edges{
         starredAt
         node{
           id
           name
+          description
           owner{
             login
             id
@@ -33,9 +40,30 @@ const starredByUser = gql`
             name
             prefix
           }
+          repositoryTopics(first: 3){
+            nodes{
+              id
+              resourcePath
+              url
+              topic{
+                id
+                name
+              }
+            }
+          }
           url
         }
       }
+    }
+  }
+}
+`;
+const removingStar = gql`
+  mutation removeStar($input: RemoveStarInput!){
+  removeStar(input: $input) {
+    clientMutationId
+    starrable{
+      id
     }
   }
 }
@@ -44,6 +72,21 @@ export default {
   data: ()=>({
     user: {}
   }),
+  methods: {
+    removeStar(id){
+      const varStar = {
+              starrableId: id,
+              clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
+            };
+      this.$apollo.mutate({
+        mutation: removingStar,
+        variables: {
+            input: varStar,
+        }
+      })
+      console.log('removed');
+    }
+  },
   apollo: {
     user: {
       query: starredByUser,
@@ -51,8 +94,34 @@ export default {
   }
 }
 </script>
-<style lang="scss" module>
-@import '@design';
-
-
+<style scoped>
+  .star {
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding-bottom: 10px;
+    border-bottom: rgb(187, 185, 185) solid 1px;
+  }
+  .btn {
+    background-color: #f0f1f1;
+    border-color: #a5a6a7;
+  }
+  .btn:hover {
+    background-color: #ccd2db;
+  }
+  .userRepo {
+    font-size: 20px;
+    color: rgb(10, 112, 196);
+    padding: 4px;
+  }
+  .description {
+    font-size: 18px;
+    color: rgb(136, 137, 138);
+    padding: 2px;
+  }
+  .topic {
+    font-size: 14px;
+    color: rgb(70, 71, 71);
+    padding: 6px;
+  }
 </style>

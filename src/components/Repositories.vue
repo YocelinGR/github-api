@@ -1,15 +1,20 @@
 <template>
   <div>
-    <section v-for="repo in user.repositories.nodes" :key="repo.id">
-      <p>{{ repo.name}}</p>
-      <span v-if="repo.repositoryTopics.nodes">
-        <span v-for="topic in repo.repositoryTopics.nodes" :key="topic.id">
-          {{topic.topic.name}}
+    <div v-for="repo in user.repositories.nodes" :key="repo.id" class="repos row">
+      <div class="col-md-6">
+        <a :href="repo.url" class="repoName">{{ repo.name}}</a>
+        <br>
+        <span v-if="repo.repositoryTopics.nodes" class="topics">
+          <span v-for="topic in repo.repositoryTopics.nodes" :key="topic.id">
+            {{topic.topic.name}}
+          </span>
         </span>
-      </span>
-      <span>{{ repo.createdAt }}</span>
-      <button @click="starredRepo(repo.id)">Star</button>
-    </section>
+        <span class="topics">{{ repo.createdAt }}</span>
+      </div>
+      <div class="col-md-3">
+        <button @click="starredRepo(repo.id)" class="btn btn-light" @dblclick="removeStar(repo.id)"><i :class="repo.viewerHasStarred ? 'fas fa-star' : 'far fa-star'"></i></button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,6 +29,9 @@ const overviewTag = gql`
       nodes{
         id
         name
+        url
+        url
+        viewerHasStarred
         createdAt
         repositoryTopics(first: 3){
           nodes{
@@ -51,9 +59,19 @@ const addStar = gql`
   }
 }
 `;
+const removingStar = gql`
+  mutation removeStar($input: RemoveStarInput!){
+  removeStar(input: $input) {
+    clientMutationId
+    starrable{
+      id
+    }
+  }
+}
+`;
 export default {
   data: () => ({
-    user: {}
+    user: {},
   }),
   methods: {
     starredRepo(id){
@@ -67,7 +85,20 @@ export default {
             input: varStar,
         }
       })
-      console.log(id);
+      console.log('added');
+    },
+    removeStar(id){
+      const varStar = {
+              starrableId: id,
+              clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
+            };
+      this.$apollo.mutate({
+        mutation: removingStar,
+        variables: {
+            input: varStar,
+        }
+      })
+      console.log('removed');
     }
   },
   apollo: {
@@ -78,23 +109,30 @@ export default {
 }
 </script>
 
-<style>
-  section {
-    border: 1px rgb(141, 134, 134) solid;
-    width: 80%;
-    height: 100px;;
-    display: inline-block;
+<style scoped>
+  .repos {
+    border-bottom: 1px rgb(141, 134, 134) solid;
+    width: 90%;
+    height: 100px;
     justify-content: center;
     align-items: center;
-    margin: 15px;
-    padding: 15px;
-    font-size: 16px;
-    color: rgb(64, 103, 212);
+    margin: 5px;
+    padding: 5px;
     font-weight: 600;
-    border-radius: 5px;
   }
-  span {
-    color: rgb(100, 97, 97);
-    font-weight: 600;
+  .btn {
+    background-color: #f0f1f1;
+    border-color: #a5a6a7;
+  }
+  .btn:hover {
+    background-color: #ccd2db;
+  }
+  .repoName {
+    font-size: 18px;
+    color: rgb(10, 112, 196);
+  }
+  .topics {
+    font-size: 14px;
+    color: rgb(70, 71, 71);
   }
 </style>
