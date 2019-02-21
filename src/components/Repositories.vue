@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="repo in user.repositories.nodes" :key="repo.id" class="repos row">
+    <div v-for="repo in user.repositories && user.repositories.nodes" :key="repo.id" class="repos row">
       <div class="col-md-6">
         <a :href="repo.url" class="repoName">{{ repo.name}}</a>
         <br>
@@ -12,7 +12,7 @@
         <span class="topics">{{ repo.createdAt }}</span>
       </div>
       <div class="col-md-3">
-        <button @click="starredRepo(repo.id)" class="btn btn-light" @dblclick="removeStar(repo.id)"><i :class="repo.viewerHasStarred ? 'fas fa-star' : 'far fa-star'"></i></button>
+        <button class="btn btn-light" @click="starredRepo(repo.id)" @dblclick="removeStar(repo.id)"><i :class="repo.viewerHasStarred ? 'fas fa-star' : 'far fa-star'"></i></button>
       </div>
     </div>
   </div>
@@ -79,6 +79,7 @@ export default {
               starrableId: id,
               clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
             };
+      location.reload();
       this.$apollo.mutate({
         mutation: addStar,
         variables: {
@@ -92,6 +93,7 @@ export default {
               starrableId: id,
               clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
             };
+      location.reload();
       this.$apollo.mutate({
         mutation: removingStar,
         variables: {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-for="repo in user.repositories.nodes" :key="repo.id">
+    <section v-for="repo in user.repositories && user.repositories.nodes" :key="repo.id">
       <a :href="repo.url" class="title">{{repo.name}}</a>
       <p v-if="repo.repositoryTopics.nodes">
         <span v-for="topic in repo.repositoryTopics.nodes" :key="topic.id">

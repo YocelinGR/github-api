@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/StarsComponent Displays user starred repos data 1`] = `
+<div>
+  <div
+    class="star row"
+  >
+    <div
+      class="col-md-8"
+    >
+      <span
+        class="userRepo"
+      >
+        Jonhks / 
+      </span>
+       
+      <a
+        class="userRepo"
+        href="https://github.com/Jonhks/javascript"
+      >
+        javascript
+      </a>
+       
+      <p
+        class="description"
+      >
+        
+      </p>
+        
+      <span
+        class="topic"
+      >
+        2019-02-15T15:45:51Z
+      </span>
+    </div>
+     
+    <div
+      class="col-md-3"
+    >
+      <button
+        class="btn btn-light"
+      >
+        <i
+          class="far fa-star"
+        />
+         Unfollow
+      </button>
+    </div>
+  </div>
+  <div
+    class="star row"
+  >
+    <div
+      class="col-md-8"
+    >
+      <span
+        class="userRepo"
+      >
+        YocelinGR / 
+      </span>
+       
+      <a
+        class="userRepo"
+        href="https://github.com/YocelinGR/YocelinGR.github.io"
+      >
+        YocelinGR.github.io
+      </a>
+       
+      <p
+        class="description"
+      >
+        En el presente repositorio se presenta el portafolio personal de quien suscribe, en él se vierte la información personal y  de contacto, el background y los principales proyectos en los que se a trabajado. 
+      </p>
+       
+      <span
+        class="topic"
+      >
+        
+          javascript
+        
+      </span>
+      <span
+        class="topic"
+      >
+        
+          jest-tests
+        
+      </span>
+      <span
+        class="topic"
+      >
+        
+          bootstrap4
+        
+      </span>
+       
+      <span
+        class="topic"
+      >
+        2019-02-21T19:32:22Z
+      </span>
+    </div>
+     
+    <div
+      class="col-md-3"
+    >
+      <button
+        class="btn btn-light"
+      >
+        <i
+          class="far fa-star"
+        />
+         Unfollow
+      </button>
+    </div>
+  </div>
+</div>
+`;

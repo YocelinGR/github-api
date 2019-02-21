@@ -42,6 +42,7 @@ export default {
             content: 'EYES',
             clientMutationId: "MDQ6VXNlcjM5ODMzMDQ1",
         };
+        location.reload();
         this.$apollo.mutate({
           mutation: mutationEmoji,
           variables: {

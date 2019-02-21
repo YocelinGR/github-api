@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-for="repo in user.starredRepositories.edges" :key="repo.starredAt" class="star row">
+    <div v-for="repo in user.starredRepositories && user.starredRepositories.edges" :key="repo.node.id" class="star row">
       <div class="col-md-8">
         <span class="userRepo">{{ repo.node.owner.login}} / </span>
         <a :href="repo.node.url" class="userRepo">{{ repo.node.name}}</a>
@@ -36,10 +36,7 @@ const starredByUser = gql`
             id
           }
           createdAt
-          defaultBranchRef{
-            name
-            prefix
-          }
+          url
           repositoryTopics(first: 3){
             nodes{
               id
@@ -51,7 +48,6 @@ const starredByUser = gql`
               }
             }
           }
-          url
         }
       }
     }
@@ -78,13 +74,13 @@ export default {
               starrableId: id,
               clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
             };
+      location.reload();
       this.$apollo.mutate({
         mutation: removingStar,
         variables: {
             input: varStar,
         }
       })
-      console.log('removed');
     }
   },
   apollo: {

@@ -45,7 +45,10 @@ export default {
     Following
   },
   props: {
-    totalCount: Object,
+    totalCount: {
+      type: Object,
+      required: true,
+    },
   },
   data: () => ({
       tabs: [{

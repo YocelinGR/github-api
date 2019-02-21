@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="userFollower in user.followers.nodes" :key="userFollower.id" class="followers row">
+    <div v-for="userFollower in user.followers && user.followers.nodes" :key="userFollower.id" class="followers row">
     <div class="col-md-2">
       <img :src=" userFollower.avatarUrl" alt="user image">
     </div>

@@ -5,7 +5,7 @@
       <button class="btn btn-light" @click="newColumn">New Project Column</button>
       <hr>
       <input v-model="description" type="text" placeholder="Project Description">
-      <button class="btn btn-light" @click="newCard">New Project</button>
+      <button class="btn btn-light" @click="newCard">New Project Card</button>
     </div>
   </div>
 </template>
@@ -39,13 +39,13 @@ export default {
         note: this.description,
         clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
       };
+      location.reload();
       this.$apollo.mutate({
         mutation: createProjectCard,
         variables: {
           input: inputCard,
         }
       })
-      console.log('done');
     },
     newColumn(){
       const inputTitle = {
@@ -53,13 +53,13 @@ export default {
         name: this.title,
         clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
       };
+      location.reload();
       this.$apollo.mutate({
         mutation: createProjectColumn,
         variables: {
           input: inputTitle,
         }
       })
-      console.log('column done');
     }
   }
 }
