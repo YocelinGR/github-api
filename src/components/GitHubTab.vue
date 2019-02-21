@@ -19,6 +19,7 @@
       </div>
       <OverView v-if="activeTab.id === 0"></OverView>
       <Repositories v-if="activeTab.id === 1"></Repositories>
+      <Projects v-if="activeTab.id === 2"></Projects>
       <StarsComponent v-if="activeTab.id === 3"></StarsComponent>
       <Follower v-if="activeTab.id === 4"></Follower>
       <Following v-if="activeTab.id === 5"></Following>
@@ -33,10 +34,12 @@ import OverView from './OverView'
 import Repositories from './Repositories'
 import Follower from './Follower'
 import Following from './Following'
+import Projects from './Projects'
 export default {
   components: {
     OverView,
     Repositories,
+    Projects,
     StarsComponent,
     Follower,
     Following
