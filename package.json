@@ -39,6 +39,7 @@
     "axios": "^0.18.0",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
+    "graphql-tools": "^4.0.4",
     "lodash": "4.17.11",
     "normalize.css": "8.0.1",
     "nprogress": "0.2.0",
