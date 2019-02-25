@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/OverView Displays overview first user´s repos 1`] = `
+<div>
+  <section>
+    <a
+      class="title"
+      href="https://github.com/YocelinGR/TriviaPreAdmision"
+    >
+      TriviaPreAdmision
+    </a>
+     
+    <p />
+  </section>
+</div>
+`;
