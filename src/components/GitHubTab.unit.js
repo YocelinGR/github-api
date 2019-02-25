@@ -31,7 +31,7 @@ describe('@components/GitHubTab', () => {
         id: 3,
         isActive: false,
       });
-     expect(wrapper.find('div.active').html()).toContain('Stars');
-
+     expect(wrapper.find('div.active').html()).toContain('Stars')
+      expect(wrapper.find('span.active').exists()).toBe(true)
   })
 })
