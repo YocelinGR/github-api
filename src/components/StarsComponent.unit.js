@@ -22,7 +22,7 @@ describe('@components/StarsComponent', () => {
     expect(mutate).toBeCalled()
   })
 
-  it('Displays user starred repos data', () => {
+  it('Displays user starred repositories data', () => {
     const wrapper = shallowMount(StarsComponent, { localVue })
     wrapper.setData({
       user: {
