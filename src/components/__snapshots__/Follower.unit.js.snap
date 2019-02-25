@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/Follower Displays user starred repositories data 1`] = `
+<div>
+  <div
+    class="followers row"
+  >
+    <div
+      class="col-md-2"
+    >
+      <img
+        alt="user image"
+        src="https://avatars2.githubusercontent.com/u/39533134?s=64&v=4"
+      />
+    </div>
+     
+    <div
+      class="col-md-8"
+    >
+      <span
+        class="name"
+      >
+        Linda Tableros
+      </span>
+       
+      <span
+        class="userName"
+      >
+        lindatablerosgessner
+      </span>
+       
+      <p
+        class="userName"
+      >
+        
+      </p>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="col-md-2"
+    >
+      <button
+        class="btn btn-light"
+      >
+        Follow
+      </button>
+    </div>
+  </div>
+   
+  <hr />
+</div>
+`;
