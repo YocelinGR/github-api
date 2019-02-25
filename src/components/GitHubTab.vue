@@ -2,7 +2,7 @@
   <div>
     <ul class="nav nav-tabs" role="tablist">
       <li v-for="tab in tabs" :key="tab.id" role="representation">
-        <a href="#" role="tab" data-toggle="tab" @click.stop.prevent="setActive(tab)">
+        <a class="tab.name" href="#" role="tab" data-toggle="tab" @click.stop.prevent="setActive(tab)">
           {{ tab.name }}
         </a>
         <span v-if="tab.id == 1" class="number">{{ totalCount && totalCount.repositories}}</span>
@@ -24,7 +24,6 @@
       <Follower v-if="activeTab.id === 4"></Follower>
       <Following v-if="activeTab.id === 5"></Following>
     </div>
-    <!-- <pre>{{ $data }}</pre> -->
   </div>
 </template>
 
@@ -92,7 +91,7 @@ export default {
       }],
       activeTab: {}
   }),
-  ready: function() {
+  mounted: function() {
       this.setActive(this.tabs[0]);
     },
   methods: {

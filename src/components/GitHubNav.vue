@@ -42,7 +42,6 @@ const getUser = gql`
   query user {
   user(login: "YocelinGR"){
     avatarUrl(size: 30),
-    bio,
     id
   }
 }

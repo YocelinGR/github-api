@@ -13,7 +13,6 @@ describe('@components/GitHubNav', () => {
     wrapper.setData({
       user: {
         avatarUrl: "https://avatars3.githubusercontent.com/u/39833045?s=30&v=4",
-        bio: "Front End Developer egresada de Laboratoria e\r\nIngeniera en Comunicaciones y Electrónica.\r\nApasionada por la programación y fiel creyente de\r\nla mejora continua",
         id: "MDQ6VXNlcjM5ODMzMDQ1"
       },
     })
