@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/Following Displays repositories that user follows 1`] = `
+<div>
+  <div
+    class="followers row"
+  >
+    <div
+      class="col-md-2"
+    >
+      <img
+        alt="user image"
+        src="https://avatars0.githubusercontent.com/u/150330?s=64&v=4"
+      />
+    </div>
+     
+    <div
+      class="col md-8"
+    >
+      <span
+        class="name"
+      >
+        Kyle Simpson
+      </span>
+       
+      <span
+        class="userName"
+      >
+        getify
+      </span>
+       
+      <p
+        class="userName"
+      >
+        I teach JavaScript and I'd love to come help your team's developers. If that's interesting to you, please reach out to me getify@gmail.com.
+      </p>
+       
+      <p
+        class="userName"
+      >
+        <i
+          class="fas fa-map-marker-alt"
+        />
+        
+      Austin, TX
+      </p>
+    </div>
+     
+    <div
+      class="col-md-2"
+    >
+      <button
+        class="btn btn-light"
+      >
+        Unfollow
+      </button>
+    </div>
+  </div>
+</div>
+`;
