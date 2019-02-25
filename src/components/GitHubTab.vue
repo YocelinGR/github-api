@@ -48,6 +48,15 @@ export default {
     totalCount: {
       type: Object,
       required: true,
+      default: () => {
+            return{
+              followers: 0,
+              following: 0,
+              projects: 0,
+              repositories: 0,
+              starredRepositories: 0,
+            }
+        }
     },
   },
   data: () => ({

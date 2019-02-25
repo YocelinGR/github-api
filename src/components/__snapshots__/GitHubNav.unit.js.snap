@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/GitHubNav Displays user profile 1`] = `
+<header
+  role="banner"
+>
+  <div
+    class="container-fluid row"
+  >
+    <div
+      class="col-md-1"
+    >
+      <i
+        class="fab fa-github icon-nav"
+        style="font-size: 40px; color: white;"
+      />
+    </div>
+     
+    <div
+      class="col-md-9"
+    >
+      <nav
+        class="navbar navbar-expand-lg git-nav"
+      >
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <form
+            class="form-inline my-2 my-lg-0"
+          >
+            <input
+              aria-label="Search"
+              class="form-control mr-sm-2"
+              placeholder="Search or jump to..."
+              type="search"
+            />
+             
+            <button
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >
+              <i
+                class="fas fa-slash"
+                style="font-size: 18px; color: green;"
+              />
+            </button>
+          </form>
+           
+          <ul
+            class="navbar-nav mr-auto"
+          >
+            <li
+              class="nav-item active"
+            >
+              <a
+                class="nav-link"
+                href="#"
+              >
+                Pull Request 
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+              </a>
+            </li>
+             
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="#"
+              >
+                Issues
+              </a>
+            </li>
+             
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="#"
+              >
+                Marketplace
+              </a>
+            </li>
+             
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="#"
+              >
+                Explore
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+     
+    <div
+      class="col-md-1"
+    >
+      <img
+        alt="user photo"
+        src="https://avatars3.githubusercontent.com/u/39833045?s=30&v=4"
+      />
+    </div>
+  </div>
+</header>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/GitHub Displays user starred repositories data 1`] = `
+<div>
+  <h1>
+    GitHub
+  </h1>
+   
+  <div>
+    <button>
+      click to inserte EYES
+    </button>
+     
+    <p>
+      Creación:  
+    </p>
+     
+    <span>
+      MDEwOlJlcG9zaXRvcnkxMzc5MjE1NjY=
+    </span>
+  </div>
+</div>
+`;
