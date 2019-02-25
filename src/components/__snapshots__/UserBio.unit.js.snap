@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/UserBio Displays user starred repositories data 1`] = `
+<div
+  class="row"
+>
+  <div
+    class="col-md-3 user-space"
+  >
+    <div
+      class="card user"
+      style="width: 18rem;"
+    >
+      <img
+        alt="..."
+        class="card-img-top"
+        src="https://avatars0.githubusercontent.com/u/39833045?s=256&v=4"
+      />
+       
+      <div
+        class="card-body"
+      >
+        <span
+          class="emoji"
+          data-markdown=""
+        >
+          
+            :shipit:
+        
+        </span>
+         
+        <p
+          class="card-text user-message"
+        >
+          Studying 
+        </p>
+      </div>
+    </div>
+     
+    <div
+      class="user-description"
+    >
+      <p>
+        
+      </p>
+       
+      <p>
+        Front End Developer egresada de Laboratoria e
+Ingeniera en Comunicaciones y Electrónica.
+Apasionada por la programación y fiel creyente de
+la mejora continua
+      </p>
+       
+      <p>
+        <i
+          class="fas fa-map-marker-alt"
+          style="font-size: 24px; color: gray;"
+        />
+        
+      Estado de México, CP 52928
+      </p>
+       
+      <button
+        class="btn btn-secondary btn-block"
+        type="button"
+      >
+        Edit
+      </button>
+    </div>
+     
+    <hr />
+  </div>
+   
+  <div
+    class="col-md-8 user-work"
+  >
+    <githubtab-stub
+      totalcount="[object Object]"
+    />
+  </div>
+</div>
+`;
