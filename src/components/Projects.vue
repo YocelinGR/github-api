@@ -39,7 +39,7 @@ export default {
         note: this.description,
         clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
       };
-      location.reload();
+      // location.reload();
       this.$apollo.mutate({
         mutation: createProjectCard,
         variables: {
@@ -53,7 +53,7 @@ export default {
         name: this.title,
         clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
       };
-      location.reload();
+      // location.reload();
       this.$apollo.mutate({
         mutation: createProjectColumn,
         variables: {

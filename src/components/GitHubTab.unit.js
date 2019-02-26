@@ -8,7 +8,7 @@ describe('@components/GitHubTab', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
   it('Renders correclty changing props', () => {
-    const wrapper = shallowMount(GitHubTab, { localVue })
+    const wrapper = mount(GitHubTab)
     expect(wrapper.props().totalCount.followers).toBe(0)
     const wrappperModify = mount(GitHubTab, {
       propsData: {

@@ -79,28 +79,26 @@ export default {
               starrableId: id,
               clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
             };
-      location.reload();
+      // location.reload();
       this.$apollo.mutate({
         mutation: addStar,
         variables: {
             input: varStar,
         }
       })
-      console.log('added');
     },
     removeStar(id){
       const varStar = {
               starrableId: id,
               clientMutationId:  "MDQ6VXNlcjM5ODMzMDQ1"
             };
-      location.reload();
+      // location.reload();
       this.$apollo.mutate({
         mutation: removingStar,
         variables: {
             input: varStar,
         }
       })
-      console.log('removed');
     }
   },
   apollo: {

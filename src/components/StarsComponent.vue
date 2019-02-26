@@ -90,7 +90,7 @@ export default {
           input: varStar,
         },
       })
-      location.reload()
+      // location.reload()
     },
   },
   apollo: {

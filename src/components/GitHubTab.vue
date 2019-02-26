@@ -47,7 +47,7 @@ export default {
     totalCount: {
       type: Object,
       required: true,
-      default: () => {
+      default(){
             return{
               followers: 0,
               following: 0,

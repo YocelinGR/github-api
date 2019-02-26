@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@components/Repositories Displays user starred repositories data 1`] = `
+<div>
+  <div
+    class="repos row"
+  >
+    <div
+      class="col-md-6"
+    >
+      <a
+        class="repoName"
+        href="https://github.com/YocelinGR/graphql-subscriptions-server-practice"
+      >
+        graphql-subscriptions-server-practice
+      </a>
+       
+      <br />
+       
+      <span
+        class="topics"
+      />
+       
+      <span
+        class="topics"
+      >
+        2019-02-20T22:35:48Z
+      </span>
+    </div>
+     
+    <div
+      class="col-md-3"
+    >
+      <button
+        class="btn btn-light"
+      >
+        <i
+          class="far fa-star"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

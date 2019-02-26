@@ -18,7 +18,7 @@ describe('@components/Repositories', () => {
         },
       },
     })
-    wrapper.vm.addStar()
+    wrapper.vm.starredRepo()
     expect(mutate).toBeCalled()
   })
 
@@ -32,7 +32,7 @@ describe('@components/Repositories', () => {
         },
       },
     })
-    wrapper.vm.removingStar()
+    wrapper.vm.removeStar()
     expect(mutate).toBeCalled()
   })
 
