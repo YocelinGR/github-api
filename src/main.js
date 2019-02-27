@@ -19,7 +19,7 @@ if (window.Cypress) {
 }
 
 const USERNAME = 'YocelinGR'
-const TOKEN = 'ace3d5563ef3ae6fee3f5d704e029b70b0567c45'
+const TOKEN = '931cdabb794dfdd2bdd4980bb97a570fa6bc12ce'
 
 // Create apollo client
 const httpLink = new HttpLink({

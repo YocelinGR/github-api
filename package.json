@@ -41,6 +41,7 @@
     "axios": "^0.18.0",
     "dom-testing-library": "^3.16.8",
     "graphql": "^14.1.1",
+    "graphql-cli": "^3.0.11",
     "graphql-tag": "^2.10.1",
     "graphql-tools": "^4.0.4",
     "lodash": "4.17.11",

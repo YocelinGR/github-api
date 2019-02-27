@@ -52,3 +52,10 @@ exports[`@components/Follower Displays user starred repositories data 1`] = `
   <hr />
 </div>
 `;
+
+exports[`@components/Follower Should have an id field of type string in followers query 1`] = `
+<div>
+   
+  <hr />
+</div>
+`;

@@ -4,7 +4,8 @@ describe('Hava a Followers section', () => {
     cy.get(':nth-child(5) > .tab\\.name').click()
     cy.get('.active > p').contains('Followers')
   })
-  it('Has at least one follower', () => {
+  it('Has followers', () => {
     cy.get('[data-v-6be1b6d1=""][data-v-79f96b18=""]')
+      .children().should('have.length', 19)
   })
 })

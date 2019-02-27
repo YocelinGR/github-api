@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "api-git": {
+      "schemaPath": "schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "dev":  {
+            "url": "https://api.github.com/graphql?user_name='YocelinGR'&access_token='931cdabb794dfdd2bdd4980bb97a570fa6bc12ce'",
+            "headers": {
+              "Authorization": "Bearer '931cdabb794dfdd2bdd4980bb97a570fa6bc12ce'"
+            }
+          }
+        }
+      }
+   }
+  }
+}
