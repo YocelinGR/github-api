@@ -1,33 +1,18 @@
-import axios from 'axios'
+const fetch = require("node-fetch");
+const { introspectionQuery } = require("graphql");
+const fs = require("fs");
+const USERNAME = 'YocelinGR'
+const TOKEN = '8a4e36f37e5c36bf88bd06790f1fe42240fa4ebd'
 
-export const api = async () => {
-      const USERNAME = 'YocelinGR';
-      const TOKEN = '931cdabb794dfdd2bdd4980bb97a570fa6bc12ce';
-      const url = `https://api.github.com/graphql?user_name=${USERNAME}&access_token=${TOKEN}`;
-      try {
-        await axios.post({
-          url,
-          params: {
-            'user_name': USERNAME,
-            'access_token': TOKEN,
-          },
-          headers: {
-            'token': TOKEN,
-            'Authorization': `Bearer ${TOKEN}`
-          },
-          data: {
-            query: `
-            query FindIssueID {
-             repository(owner: "YocelinGR",
-              name: "cdmx-2018-06-bc-core-am-data-dashboard") {
-                id
-              }
-            }`
-          }
-        }).then((result) => {
-          console.log()
-        })
-      } catch (e) {
-        return e;
-      }
-    }
+
+fetch(`https://api.github.com/graphql?user_name=${USERNAME}&access_token=${TOKEN}`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ query: introspectionQuery })
+})
+  .then(res => res.json())
+  .then(res => {
+    fs.writeFileSync("./result.json", JSON.stringify(res.data, null, 2));
+    console.log('done');
+  }
+  );

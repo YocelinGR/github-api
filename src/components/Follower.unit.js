@@ -31,9 +31,6 @@ describe('@components/Follower', () => {
     expect(wrapper.element).toMatchSnapshot()
   })
   it('Should have an id field of type string in followers query', () =>{
-    // const result = await userApi;
-    // const dataApi = await result.api();
-    // console.log(dataApi);
     const followers = gql`
       query user {
       user(login: "YocelinGR"){
