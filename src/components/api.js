@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const { introspectionQuery, buildClientSchema } = require("graphql");
 const fs = require("fs");
 const USERNAME = 'YocelinGR'
-const TOKEN = 'fe6641697bfd4421939383cc3e784393afea204e'
+const TOKEN = 'd2722d5163cafffc205739be7942fa96cd6d6b94'
 
 
 fetch(`https://api.github.com/graphql?user_name=${USERNAME}&access_token=${TOKEN}`, {
@@ -16,5 +16,6 @@ fetch(`https://api.github.com/graphql?user_name=${USERNAME}&access_token=${TOKEN
     const introspectionSchemaResult = JSON.parse(fs.readFileSync('./result.json'));
     const graphqlSchemaObj = buildClientSchema(introspectionSchemaResult);
     fs.writeFileSync("./schema.gql", JSON.stringify(graphqlSchemaObj, null, 2));
+    console.log(graphqlSchemaObj);
   }
   );

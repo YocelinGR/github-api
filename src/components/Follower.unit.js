@@ -2,9 +2,6 @@ import Follower from './Follower.vue'
 import { createLocalVue } from '@vue/test-utils'
 import gql from 'graphql-tag'
 import * as UserType from '../graphql/models/user.type.js'
-import * as graphql from 'graphql'
-const api = require('../../result')
-const apiType = api['__schema']['types']
 
 describe('@components/Follower', () => {
   const localVue = createLocalVue()
@@ -66,7 +63,7 @@ describe('@components/Follower', () => {
   })
   it('Testing schema', () => {
     let userFields = UserType.ObjectType.getFields();
-    expect(userFields.username.type).to.Be('String!');
-    console.log(userFields);
+    expect(userFields.username.type.toString()).toBe('String!');
+    console.log(userFields.username.type);
   })
 })

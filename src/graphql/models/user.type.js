@@ -1,12 +1,10 @@
-const {
+import {
     GraphQLObjectType,
     GraphQLString,
-    GraphQLNonNull,
-    GraphQLSchema,
-    GraphQLInt
-} = require('graphql');
+    GraphQLNonNull
+} from 'graphql';
 
-const ObjectType = new GraphQLObjectType({
+export const ObjectType = new GraphQLObjectType({
     name: 'User',
     fields: {
         username: {
@@ -17,7 +15,3 @@ const ObjectType = new GraphQLObjectType({
         }
     },
 });
-
-const schema = new GraphQLSchema({
-    query: ObjectType
-})
